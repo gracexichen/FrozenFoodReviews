@@ -1,16 +1,19 @@
 import "./App.css";
+import Search from "./Search/Search";
 import Navbar from "./Navbar/Navbar";
+import FoodDetail from "./Search/FoodDetail";
+import Home from "./Home/Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // Define the router with the main route
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <div>Home!</div>, // New path added
+		element: <Home />, // New path added
 	},
 	{
 		path: "/search",
-		element: <div>Search</div>,
+		element: <Search />,
 	},
 	{
 		path: "/add",
@@ -19,6 +22,10 @@ const router = createBrowserRouter([
 	{
 		path: "/leaderboard",
 		element: <div>Leaderboard</div>,
+	},
+	{
+		path: "/frozen-food/:name",
+		element: <FoodDetail />,
 	},
 ]);
 

@@ -1,0 +1,85 @@
+.home-container {
+    padding-top: 100px;
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.home-title {
+    font-size: 3rem;
+    color: #e194ff;
+    margin-bottom: 20px;
+    font-family: 'Lexend Deca', sans-serif;
+    text-align: center;
+}
+
+.home-description {
+    font-size: 1.3rem;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.feature-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 80%;
+}
+
+.feature-card {
+    border: 2px solid #76d84f;
+    background-color: #e8ffdf;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(30% - 30px);
+    height: 250px;
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', sans-serif;
+    text-align: center;
+}
+
+.feature-card h2 {
+    font-size: 1.5rem;
+    color: #e194ff;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.cta-section {
+    margin-top: 30px;
+}
+
+.start-button {
+    background-color: #e194ff;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.start-button:hover {
+    background-color: #eec3ff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Lexend Deca', sans-serif;
+}

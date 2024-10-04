@@ -4,16 +4,18 @@
     background-color: #b8ff9c;
     border-top: 4px solid #76d84f;
     height: 60px;
-    display: flex; /* Make the navbar a flex container */
-    align-items: center; /* Center items vertically */
+    display: flex;
+    align-items: center;
+    position:fixed;
+    width: 100%;
 }
 
 .pages {
     display: flex;
     flex-direction: row;
     list-style-type: none;
-    align-items: center; /* Center items vertically */
-    width: 100%; /* Ensure the list takes full width */
+    align-items: center; 
+    width: 100%;
 }
 
 .page {
@@ -30,15 +32,14 @@
 .website-name {
     flex: 3;
     padding-left: 15px;
-    display: flex; /* Make the website name a flex container */
-    align-items: center; /* Center content vertically */
+    display: flex; 
+    align-items: center; 
 }
 
 .website-title {
     text-decoration: none;
-    font-family: 'Finger Paint', sans-serif; /* Keep the original font */
+    font-family: 'Finger Paint', sans-serif; 
     font-size: 25px;
-
 }
 
 a:visited {
