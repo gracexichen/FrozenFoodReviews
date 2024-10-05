@@ -6,13 +6,7 @@ const PORT = process.env.PORT || 4000;
 setInterval(deleteStaleImages, 10 * 1000);
 
 // Middleware
-app.use(
-	cors({
-		origin: "*",
-		methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-		credentials: true,
-	})
-);
+app.use(cors());
 app.use(express.json());
 
 // Import and use the router

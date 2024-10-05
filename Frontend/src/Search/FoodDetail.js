@@ -5,7 +5,7 @@ import "./FoodDetail.css";
 async function fetchFrozenFood(id) {
 	console.log(id);
 	const result = await fetch(
-		"https://frozen-food-reviews.onrender.com/getFrozenFood",
+		"https://frozen-food-reviews.vercel.app/getFrozenFood",
 		{
 			method: "post",
 			headers: {

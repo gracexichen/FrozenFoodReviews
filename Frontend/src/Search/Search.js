@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 
 async function fetchFrozenFoods() {
 	const result = await fetch(
-		"https://frozen-food-reviews.onrender.com/getFrozenFoods",
+		"https://frozen-food-reviews.vercel.app/getFrozenFoods",
 		{
 			method: "GET",
 		}
 	);
 	const frozenFoods = await result.json();
+	console.log("frozenfoods???", frozenFoods);
 	return frozenFoods;
 }
 
