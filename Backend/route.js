@@ -1,7 +1,7 @@
 const express = require("express");
 const multer = require("multer");
 const path = require("path");
-const { tester, addFrozenFood } = require("./controller.js");
+const { tester, addFrozenFood, getFrozenFoods } = require("./controller.js");
 
 const router = express.Router();
 
@@ -30,6 +30,16 @@ router.get("/", tester);
  * @param image - image of the frozen food
  * @param stores - list of stores that the frozen food is found at
  * @param nutritionLabel - nutrition label of frozen food
+ * @returns success or error message
  */
 router.post("/addFrozenFood", upload.any(), addFrozenFood);
+
+/**
+ * Gets all of the frozen food objects
+ * #TODO: Fix so that it searches for most relevant matches
+ * @input none
+ * @returns all frozen food objects or error message
+ */
+router.get("/getFrozenFoods", getFrozenFoods);
+
 module.exports = router;

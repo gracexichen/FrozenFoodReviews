@@ -3,7 +3,7 @@ import Search from "./Search/Search";
 import Navbar from "./Navbar/Navbar";
 import FoodDetail from "./Search/FoodDetail";
 import Home from "./Home/Home";
-import AddFrozenFood from "./Add/AddFrozenFood";
+import AddFrozenFood from "./Add/Add";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // Define the router with the main route

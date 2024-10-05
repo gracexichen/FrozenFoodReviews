@@ -1,19 +1,10 @@
 import "./Search.css";
 import { Link } from "react-router-dom";
 
-type FrozenFood = {
-	id: number;
-	name: string;
-	stores: string[];
-	pictureUrl: string;
-	nutritionUrl: string;
-	rating: number;
-};
-
 export default function Search() {
 	const dumplingPic = require("../assets/frozen-dumplings.jpeg");
 	const pizzaPic = require("../assets/pizza.jpg");
-	const frozenFoods: FrozenFood[] = [
+	const frozenFoods = [
 		{
 			id: 1,
 			name: "Frozen Pizza",

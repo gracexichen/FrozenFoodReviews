@@ -38,6 +38,15 @@ async function addNewFood(name, stores, image, nutritionLabel) {
 	return response;
 }
 
+async function getAllFoods() {
+	const client = await getClient();
+	const database = client.db("frozenfoodreviews");
+	const sightings = database.collection("frozenfoods");
+	const sightingObjects = await sightings.find({}).toArray();
+	return sightingObjects;
+}
+
 module.exports = {
 	addNewFood,
+	getAllFoods,
 };

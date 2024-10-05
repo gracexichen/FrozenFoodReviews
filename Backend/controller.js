@@ -1,4 +1,4 @@
-const { addNewFood } = require("./scripts/frozenFoods");
+const { addNewFood, getAllFoods } = require("./scripts/frozenFoods");
 
 function tester(req, res) {
 	res.send("Hello from tester!");
@@ -13,7 +13,14 @@ async function addFrozenFood(req, res) {
 	);
 	res.send(result);
 }
+
+async function getFrozenFoods() {
+	result = await getAllFoods();
+	res.send(result);
+}
+
 module.exports = {
 	tester,
 	addFrozenFood,
+	getFrozenFoods,
 };
