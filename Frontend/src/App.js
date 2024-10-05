@@ -4,6 +4,7 @@ import Navbar from "./Navbar/Navbar";
 import FoodDetail from "./Search/FoodDetail";
 import Home from "./Home/Home";
 import AddFrozenFood from "./Add/Add";
+import Leaderbaord from "./Leaderboard/Leaderboard";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // Define the router with the main route
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
 	},
 	{
 		path: "/leaderboard",
-		element: <div>Leaderboard</div>,
+		element: <Leaderbaord />,
 	},
 	{
 		path: "/frozen-food/:id",

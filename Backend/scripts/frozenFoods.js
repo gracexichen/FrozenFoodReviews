@@ -3,11 +3,14 @@ const { ref, uploadBytes, getDownloadURL } = require("firebase/storage");
 const fs = require("fs");
 const { mongoose } = require("mongoose");
 
+
 // HELPER FUNCTIONS
 async function getPhotoUrl(frozenFood) {
+	const imageBuffer = fs.readFileSync(frozenFood.path);
+	const uint8Array = new Uint8Array(imageBuffer);
 	const timestamp = Date.now();
 	const photoRef = ref(storage, `frozenFood/${timestamp}.png`);
-	await uploadBytes(photoRef, frozenFood);
+	await uploadBytes(photoRef, uint8Array);
 	const url = await getDownloadURL(photoRef);
 	return url;
 }
@@ -41,12 +44,25 @@ async function addNewFood(name, stores, image, nutritionLabel) {
 async function getAllFoods() {
 	const client = await getClient();
 	const database = client.db("frozenfoodreviews");
-	const sightings = database.collection("frozenfoods");
-	const sightingObjects = await sightings.find({}).toArray();
-	return sightingObjects;
+	const frozenFoods = database.collection("frozenfoods");
+	const frozenFoodObjs = await frozenFoods.find({}).toArray();
+	return frozenFoodObjs;
+}
+
+async function getOneFood(id) {
+	console.log(id);
+	const client = await getClient();
+	const database = client.db("frozenfoodreviews");
+	const frozenFoods = database.collection("frozenfoods");
+	const frozenFoodObj = await frozenFoods.findOne({
+		_id: new mongoose.Types.ObjectId(id),
+	});
+	console.log(frozenFoodObj);
+	return frozenFoodObj;
 }
 
 module.exports = {
 	addNewFood,
 	getAllFoods,
+	getOneFood,
 };

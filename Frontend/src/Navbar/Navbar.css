@@ -29,6 +29,10 @@
     font-size: 20px;
 }
 
+.title:hover {
+    font-weight:600;
+}
+
 .website-name {
     flex: 3;
     padding-left: 15px;

@@ -1,7 +1,12 @@
 const express = require("express");
 const multer = require("multer");
 const path = require("path");
-const { tester, addFrozenFood, getFrozenFoods } = require("./controller.js");
+const {
+	tester,
+	addFrozenFood,
+	getFrozenFoods,
+	getFrozenFood,
+} = require("./controller.js");
 
 const router = express.Router();
 
@@ -41,5 +46,13 @@ router.post("/addFrozenFood", upload.any(), addFrozenFood);
  * @returns all frozen food objects or error message
  */
 router.get("/getFrozenFoods", getFrozenFoods);
+
+/**
+ * Gets the frozen food with the id
+ * @input raw json
+ * @param id - id of the frozen object to retrieve
+ * @returns the frozen food object
+ */
+router.post("/getFrozenFood", getFrozenFood);
 
 module.exports = router;

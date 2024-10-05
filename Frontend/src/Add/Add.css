@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Lexend+Deca:wght@100..900&display=swap');
+
 .container {
     padding-top: 100px;
     height: calc(100vh - 100px);
@@ -5,4 +7,50 @@
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
+}
+
+.add-title {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 50px;
+    color: #e194ff;
+    padding-bottom: 5vh;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap:6vh;
+}
+
+.fields{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    margin:20px;
+}
+
+.input-box{
+    height: 3vh;
+    width: 35vh;
+    margin-left: 7vh;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 20px;
+}
+
+.field-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.submit-button{
+    width: 50vh;
+    height:5vh;
+    align-self: center;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 20px;
+    background-color: #e194ff;
+}
+.submit-button:hover{
+    border-width: 3px;
 }

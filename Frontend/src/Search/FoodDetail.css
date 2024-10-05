@@ -1,7 +1,53 @@
-.container {
-    padding-top: 100px;
-    height: calc(100vh - 100px);
+.detail-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.food-information {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    gap:50px;
+}
+
+.reviews {
+    flex: 1;
+}
+
+.food-name {
+    font-family: 'Lexend Deca', sans-serif;
+    color: #e194ff;
+    font-size: 35px;
+}
+
+.food-pic {
+    max-height: 40vh;
+    max-width: 40vh;
+}
+
+.food-label {
+    max-height: 40vh;
+    max-width: 30vh;
+}
+
+.stores{
+    font-family: 'Lexend Deca', sans-serif;
+    color: rgb(199, 0, 186);
+    font-size: 25px;
+}
+
+.review{
+    margin: 10px;
+    border:2px solid black;
+    width:100vh;
+    min-height: 4vh;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
 }

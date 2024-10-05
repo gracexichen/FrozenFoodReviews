@@ -1,75 +1,26 @@
+import { useEffect, useState } from "react";
 import "./Search.css";
 import { Link } from "react-router-dom";
+
+async function fetchFrozenFoods() {
+	const result = await fetch("http://localhost:4000/getFrozenFoods", {
+		method: "GET",
+	});
+	const frozenFoods = await result.json();
+	return frozenFoods;
+}
 
 export default function Search() {
 	const dumplingPic = require("../assets/frozen-dumplings.jpeg");
 	const pizzaPic = require("../assets/pizza.jpg");
-	const frozenFoods = [
-		{
-			id: 1,
-			name: "Frozen Pizza",
-			stores: ["Walmart", "Target", "Costco"],
-			pictureUrl: pizzaPic,
-			nutritionUrl: "https://example.com/frozen-pizza-nutrition.pdf",
-			rating: 4.5,
-		},
-		{
-			id: 2,
-			name: "Frozen Dumplings",
-			stores: ["Trader Joe's", "Whole Foods", "Safeway"],
-			pictureUrl: dumplingPic,
-			nutritionUrl: "https://example.com/frozen-dumplings-nutrition.pdf",
-			rating: 4.7,
-		},
-		{
-			id: 3,
-			name: "Frozen Dumplings",
-			stores: ["Trader Joe's", "Whole Foods", "Safeway"],
-			pictureUrl: dumplingPic,
-			nutritionUrl: "https://example.com/frozen-dumplings-nutrition.pdf",
-			rating: 4.7,
-		},
-		{
-			id: 4,
-			name: "Frozen Dumplings",
-			stores: ["Trader Joe's", "Whole Foods", "Safeway"],
-			pictureUrl: dumplingPic,
-			nutritionUrl: "https://example.com/frozen-dumplings-nutrition.pdf",
-			rating: 4.7,
-		},
-		{
-			id: 5,
-			name: "Frozen Dumplings",
-			stores: ["Trader Joe's", "Whole Foods", "Safeway"],
-			pictureUrl: dumplingPic,
-			nutritionUrl: "https://example.com/frozen-dumplings-nutrition.pdf",
-			rating: 4.7,
-		},
-		{
-			id: 6,
-			name: "Frozen Dumplings",
-			stores: ["Trader Joe's", "Whole Foods", "Safeway"],
-			pictureUrl: dumplingPic,
-			nutritionUrl: "https://example.com/frozen-dumplings-nutrition.pdf",
-			rating: 4.7,
-		},
-		{
-			id: 7,
-			name: "Frozen Dumplings",
-			stores: ["Trader Joe's", "Whole Foods", "Safeway"],
-			pictureUrl: dumplingPic,
-			nutritionUrl: "https://example.com/frozen-dumplings-nutrition.pdf",
-			rating: 4.7,
-		},
-		{
-			id: 8,
-			name: "Frozen Dumplings",
-			stores: ["Trader Joe's", "Whole Foods", "Safeway"],
-			pictureUrl: dumplingPic,
-			nutritionUrl: "https://example.com/frozen-dumplings-nutrition.pdf",
-			rating: 4.7,
-		},
-	];
+	const [frozenFoods, setFrozenFoods] = useState([]);
+
+	useEffect(() => {
+		const getFrozenFoods = async () => {
+			setFrozenFoods(await fetchFrozenFoods());
+		};
+		getFrozenFoods();
+	}, []);
 
 	return (
 		<div className="container">
@@ -84,18 +35,18 @@ export default function Search() {
 				{frozenFoods &&
 					frozenFoods.map((food) => (
 						<Link
-							key={food.id}
+							key={food._id}
 							className="frozenFood"
-							to={`/frozen-food/${food.id}`}
+							to={`/frozen-food/${food._id}`}
 						>
 							<img
-								src={food.pictureUrl}
+								src={food.image}
 								alt={food.name}
 								className="foodImage"
 							/>
 							<div className="foodText">
 								<h2 className="foodName">{food.name}</h2>
-								<p>Available at: {food.stores.join(", ")}</p>
+								<p>Available at: {food.stores}</p>
 								<a
 									href={food.nutritionUrl}
 									target="_blank"

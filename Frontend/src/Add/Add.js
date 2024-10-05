@@ -25,45 +25,51 @@ const AddFrozenFood = () => {
 
 	return (
 		<div className="container">
-			<h2>Add Frozen Food</h2>
-			<form onSubmit={handleSubmit}>
-				<div>
-					<label>Name:</label>
+			<h1 className="add-title">Add Frozen Food</h1>
+			<form onSubmit={handleSubmit} className="form">
+				<div class="field-container">
+					<label className="fields">Name:</label>
 					<input
+						className="input-box"
 						type="text"
 						value={name}
 						onChange={(e) => setName(e.target.value)}
 						required
 					/>
 				</div>
-				<div>
-					<label>Stores (comma separated):</label>
+				<div class="field-container">
+					<label className="fields">Stores (comma separated):</label>
 					<input
+						className="input-box"
 						type="text"
 						value={stores}
 						onChange={(e) => setStores(e.target.value)}
 						required
 					/>
 				</div>
-				<div>
-					<label>Image:</label>
+				<div class="field-container">
+					<label className="fields">Image:</label>
 					<input
+						className="input-box"
 						type="file"
 						onChange={(e) => setImage(e.target.files[0])}
 						accept="image/*"
 						required
 					/>
 				</div>
-				<div>
-					<label>Nutrition Label:</label>
+				<div class="field-container">
+					<label className="fields">Nutrition Label:</label>
 					<input
+						className="input-box"
 						type="file"
 						onChange={(e) => setLabel(e.target.files[0])}
 						accept="image/*,application/pdf"
 						required
 					/>
 				</div>
-				<button type="submit">Add Frozen Food</button>
+				<button type="submit" className="submit-button">
+					Add Frozen Food
+				</button>
 			</form>
 			{message && <p>{message}</p>}
 		</div>

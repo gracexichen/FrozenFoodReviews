@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Lexend+Deca:wght@100..900&display=swap');
+
 .container {
     padding-top: 100px;
     height: calc(100vh - 100px);
@@ -34,9 +36,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: calc(25% - 30px);
-    height: 45%;
+    min-width: 30vh;
+    min-height: 40vh;
+    max-width: 45vh;
+    max-height: 50vh;
     box-sizing: border-box;
+    flex:1;
+}
+
+.frozenFood:hover{
+    outline: 3px solid #76d84f;
 }
 
 .foodDisplay {
@@ -44,6 +53,7 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
 
 .foodImage {
     height: 60%;
