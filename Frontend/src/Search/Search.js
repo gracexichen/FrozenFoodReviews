@@ -3,9 +3,12 @@ import "./Search.css";
 import { Link } from "react-router-dom";
 
 async function fetchFrozenFoods() {
-	const result = await fetch("http://localhost:4000/getFrozenFoods", {
-		method: "GET",
-	});
+	const result = await fetch(
+		"https://frozen-food-reviews.onrender.com/getFrozenFoods",
+		{
+			method: "GET",
+		}
+	);
 	const frozenFoods = await result.json();
 	return frozenFoods;
 }

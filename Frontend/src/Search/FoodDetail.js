@@ -4,16 +4,19 @@ import "./FoodDetail.css";
 
 async function fetchFrozenFood(id) {
 	console.log(id);
-	const result = await fetch("http://localhost:4000/getFrozenFood", {
-		method: "post",
-		headers: {
-			Accept: "application/json",
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({
-			id: id,
-		}),
-	});
+	const result = await fetch(
+		"https://frozen-food-reviews.onrender.com/getFrozenFood",
+		{
+			method: "post",
+			headers: {
+				Accept: "application/json",
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				id: id,
+			}),
+		}
+	);
 	const frozenFood = await result.json();
 	return frozenFood;
 }

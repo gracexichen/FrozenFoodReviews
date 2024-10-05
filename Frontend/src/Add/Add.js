@@ -17,7 +17,7 @@ const AddFrozenFood = () => {
 		formData.append("image", image);
 		formData.append("label", label);
 
-		await fetch("http://localhost:4000/addFrozenFood", {
+		await fetch("https://frozen-food-reviews.onrender.com/addFrozenFood", {
 			method: "POST",
 			body: formData,
 		});
