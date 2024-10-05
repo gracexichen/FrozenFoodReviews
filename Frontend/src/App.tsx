@@ -3,6 +3,7 @@ import Search from "./Search/Search";
 import Navbar from "./Navbar/Navbar";
 import FoodDetail from "./Search/FoodDetail";
 import Home from "./Home/Home";
+import AddFrozenFood from "./Add/AddFrozenFood";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // Define the router with the main route
@@ -17,14 +18,14 @@ const router = createBrowserRouter([
 	},
 	{
 		path: "/add",
-		element: <div>Add</div>,
+		element: <AddFrozenFood />,
 	},
 	{
 		path: "/leaderboard",
 		element: <div>Leaderboard</div>,
 	},
 	{
-		path: "/frozen-food/:name",
+		path: "/frozen-food/:id",
 		element: <FoodDetail />,
 	},
 ]);
