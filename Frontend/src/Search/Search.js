@@ -1,18 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Search.css";
 import { Link } from "react-router-dom";
-
-async function fetchFrozenFoods() {
-	const result = await fetch(
-		"https://frozen-food-reviews.vercel.app/getFrozenFoods",
-		{
-			method: "GET",
-		}
-	);
-	const frozenFoods = await result.json();
-	console.log("frozenfoods???", frozenFoods);
-	return frozenFoods;
-}
+import { fetchFrozenFoods } from "../API/frozenfood";
 
 export default function Search() {
 	const dumplingPic = require("../assets/frozen-dumplings.jpeg");
@@ -50,15 +39,20 @@ export default function Search() {
 							/>
 							<div className="foodText">
 								<h2 className="foodName">{food.name}</h2>
-								<p>Available at: {food.stores}</p>
+								<p className="foodDescription">
+									Available at: {food.stores}
+								</p>
 								<a
 									href={food.nutritionUrl}
 									target="_blank"
 									rel="noopener noreferrer"
+									className="foodDescription"
 								>
 									View Nutrition Info
 								</a>
-								<p>Rating: {food.rating}</p>
+								<p className="foodDescription">
+									Rating: {food.rating}
+								</p>
 							</div>
 						</Link>
 					))}

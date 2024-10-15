@@ -1,6 +1,13 @@
+.review-title{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 45px;
+    color: #e194ff;
+    padding-bottom: 5vh;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Lexend+Deca:wght@100..900&display=swap');
 
-.container {
+.review-container {
     padding-top: 100px;
     height: calc(100vh - 100px);
     display: flex;
@@ -9,41 +16,39 @@
     box-sizing: border-box;
 }
 
-.add-title {
+.review-add-title {
     font-family: 'Lexend Deca', sans-serif;
     font-size: 45px;
     color: #e194ff;
     padding-bottom: 5vh;
 }
 
-.form{
+.review-form{
     display: flex;
     flex-direction: column;
     gap:4.5vh;
 }
 
-.fields{
+.review-fields{
     font-family: 'Lexend Deca', sans-serif;
     font-size: 20px;
     font-weight: 500;
-    margin:20px;
 }
 
-.input-box{
+.review-input-box{
     height: 25px;
     width: 45vh;
-    margin-left: 7vh;
     font-family: 'Lexend Deca', sans-serif;
     font-size: 15px;
 }
 
-.field-container{
+.review-field-container{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.submit-button{
+.review-submit-button{
     width: 40vh;
     height:5vh;
     align-self: center;
@@ -53,6 +58,12 @@
     border-radius: 3px;
 }
 
-.submit-button:hover{
+.review-submit-button:hover{
     border-width: 3px;
+}
+
+.stars{
+    width: 40px;
+    height: 40px;
+    /* filter: grayscale(100%) */
 }

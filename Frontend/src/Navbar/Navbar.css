@@ -3,7 +3,7 @@
 .navbar {
     background-color: #b8ff9c;
     border-top: 4px solid #76d84f;
-    height: 60px;
+    height: 50px;
     display: flex;
     align-items: center;
     position:fixed;
@@ -26,7 +26,7 @@
 .title {
     text-decoration: none;
     font-family: 'Lexend Deca', sans-serif;
-    font-size: 20px;
+    font-size: 1.2em;
 }
 
 .title:hover {
@@ -43,7 +43,7 @@
 .website-title {
     text-decoration: none;
     font-family: 'Finger Paint', sans-serif; 
-    font-size: 25px;
+    font-size: 1.5em;
 }
 
 a:visited {

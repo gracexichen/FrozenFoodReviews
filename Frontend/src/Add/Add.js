@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Add.css";
+import { addFrozenFood } from "../API/frozenfood";
 
 const AddFrozenFood = () => {
 	const [name, setName] = useState("");
@@ -17,17 +18,20 @@ const AddFrozenFood = () => {
 		formData.append("image", image);
 		formData.append("label", label);
 
-		await fetch("https://frozen-food-reviews.vercel.app/addFrozenFood", {
-			method: "POST",
-			body: formData,
-		});
+		addFrozenFood(formData);
+
+		setName("");
+		setStores("");
+		setImage(null);
+		setLabel(null);
+		setMessage("Frozen food added successfully!");
 	};
 
 	return (
 		<div className="container">
 			<h1 className="add-title">Add Frozen Food</h1>
 			<form onSubmit={handleSubmit} className="form">
-				<div class="field-container">
+				<div className="field-container">
 					<label className="fields">Name:</label>
 					<input
 						className="input-box"
@@ -37,7 +41,7 @@ const AddFrozenFood = () => {
 						required
 					/>
 				</div>
-				<div class="field-container">
+				<div className="field-container">
 					<label className="fields">Stores (comma separated):</label>
 					<input
 						className="input-box"
@@ -47,7 +51,7 @@ const AddFrozenFood = () => {
 						required
 					/>
 				</div>
-				<div class="field-container">
+				<div className="field-container">
 					<label className="fields">Image:</label>
 					<input
 						className="input-box"
@@ -57,7 +61,14 @@ const AddFrozenFood = () => {
 						required
 					/>
 				</div>
-				<div class="field-container">
+				{image && (
+					<img
+						src={URL.createObjectURL(image)}
+						alt="Selected"
+						className="image-preview"
+					/>
+				)}
+				<div className="field-container">
 					<label className="fields">Nutrition Label:</label>
 					<input
 						className="input-box"
@@ -67,6 +78,13 @@ const AddFrozenFood = () => {
 						required
 					/>
 				</div>
+				{label && (
+					<img
+						src={URL.createObjectURL(label)}
+						alt="Label Preview"
+						className="image-preview"
+					/>
+				)}
 				<button type="submit" className="submit-button">
 					Add Frozen Food
 				</button>

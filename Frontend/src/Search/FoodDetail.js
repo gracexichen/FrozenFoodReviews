@@ -1,25 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./FoodDetail.css";
-
-async function fetchFrozenFood(id) {
-	console.log(id);
-	const result = await fetch(
-		"https://frozen-food-reviews.vercel.app/getFrozenFood",
-		{
-			method: "post",
-			headers: {
-				Accept: "application/json",
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				id: id,
-			}),
-		}
-	);
-	const frozenFood = await result.json();
-	return frozenFood;
-}
+import { fetchFrozenFood } from "../API/frozenfood";
 
 export default function FoodDetail() {
 	const { id } = useParams();
@@ -51,8 +34,11 @@ export default function FoodDetail() {
 				<div className="reviews">
 					<h1 className="food-name">Reviews</h1>
 					<div className="review">
-						<p>To Be Developed! :)</p>
+						<p>This is a very good review </p>
 					</div>
+					<Link className="add-review-btn" to={`/add-review/${id}`}>
+						Add Your Own Review
+					</Link>
 				</div>
 			</div>
 		</div>
