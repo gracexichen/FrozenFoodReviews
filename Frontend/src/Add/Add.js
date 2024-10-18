@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Add.css";
-import { addFrozenFood } from "../API/frozenfood";
+import { addFrozenFood } from "../API/backend";
 
 const AddFrozenFood = () => {
 	const [name, setName] = useState("");

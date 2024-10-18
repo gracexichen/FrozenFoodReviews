@@ -4,6 +4,8 @@ const {
 	getOneFood,
 } = require("./scripts/frozenFoods");
 
+const { addNewReview, getReviewsForFood } = require("./scripts/foodReviews");
+
 function tester(req, res) {
 	res.send("Hello from tester!");
 }
@@ -28,9 +30,26 @@ async function getFrozenFood(req, res) {
 	res.send(result);
 }
 
+async function addReview(req, res) {
+	result = await addNewReview(
+		req.body.foodID,
+		req.body.rating,
+		req.body.reviewer,
+		req.body.review
+	);
+	res.send(result);
+}
+
+async function getReviews(req, res) {
+	result = await getReviewsForFood(req.body.foodID);
+	res.send(result);
+}
+
 module.exports = {
 	tester,
 	addFrozenFood,
 	getFrozenFoods,
 	getFrozenFood,
+	addReview,
+	getReviews,
 };

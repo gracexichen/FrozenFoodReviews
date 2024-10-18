@@ -9,7 +9,7 @@
 }
 
 .searchBar {
-    min-height: 10vh;
+    min-height: 8vh;
     width: 80vh;
     font-size: x-large;
     text-align: center;
@@ -24,7 +24,7 @@
     margin: 10px;
     font-family: 'Lexend Deca', sans-serif;
     color: #e194ff;
-    font-size: 1.7em;
+    font-size: 1.6em;
 }
 
 .frozenFood {
@@ -38,9 +38,9 @@
     align-items: center;
     justify-content: center;
     min-width: calc(18%);
-    min-height: 30vh;
-    max-width: calc(25%);
-    max-height: 45vh;
+    min-height: 42vh;
+    max-width: calc(20%);
+    max-height: 40vh;
     box-sizing: border-box;
     flex:1;
 }
@@ -53,6 +53,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    overflow-y: scroll;
 }
 
 

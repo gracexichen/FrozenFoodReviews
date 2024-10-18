@@ -1,19 +1,19 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { fetchFrozenFood } from "../API/frozenfood";
-// import star from "../assets/white-star.png";
+import { fetchFrozenFood, addReview } from "../API/backend";
+import { useNavigate } from "react-router-dom";
 import yellowStar from "../assets/yellow-star.png";
 import "./FoodReviews.css";
 
-function handleSubmit() {}
 export default function FoodReviews() {
+	const navigate = useNavigate();
 	const { id } = useParams();
-	const [name, setName] = useState("");
-	const [stores, setStores] = useState("");
-	const [message, setMessage] = useState("");
 	const [foodName, setFoodName] = useState("");
-	const [tempRating, setTempRating] = useState(0);
-	const [rating, setRating] = useState(0);
+	const [message, setMessage] = useState("");
+	const [tempRating, setTempRating] = useState(1);
+	const [rating, setRating] = useState(1);
+	const [reviewer, setReviewer] = useState("");
+	const [review, setReview] = useState("");
 
 	const starsArray = Array.from({ length: 5 });
 
@@ -26,20 +26,29 @@ export default function FoodReviews() {
 		getFrozenFood(id);
 	}, [id]);
 
+	const handleSubmit = async (e) => {
+		console.log("handleSubmit");
+		e.preventDefault();
+
+		const formData = new FormData();
+		formData.append("foodID", id);
+		formData.append("review", review);
+		formData.append("rating", rating);
+		formData.append("reviewer", reviewer);
+		addReview(formData);
+		setReview("");
+		setReviewer("");
+		setRating(1);
+		setTempRating(1);
+		setMessage("Food review added successfully!");
+		navigate(`/frozen-food/${id}`);
+	};
+
 	return (
 		<div className="review-container">
 			<h1 className="review-title">Add Review For "{foodName}"</h1>
 			<form onSubmit={handleSubmit} className="review-form">
-				<label className="review-fields">Reviewer:</label>
-				<input
-					className="review-input-box"
-					type="text"
-					value={name}
-					onChange={(e) => setName(e.target.value)}
-					required
-				/>
-				<label className="review-fields">Rating:</label>
-				<div>
+				<div className="stars">
 					{starsArray.map((_, index) => {
 						let filterStyle;
 						if (rating !== 0) {
@@ -59,7 +68,7 @@ export default function FoodReviews() {
 							<img
 								key={index}
 								src={yellowStar}
-								className="stars"
+								className="star"
 								style={{
 									filter: filterStyle,
 								}}
@@ -71,24 +80,33 @@ export default function FoodReviews() {
 								}}
 								onClick={() => {
 									setRating(index + 1);
-									console.log(index + 1);
 								}}
 							/>
 						);
 					})}
+					<p>Rating: {rating}</p>
 				</div>
-				<label className="review-fields">Review:</label>
 				<input
-					className="review-input-box"
+					className="review-username"
 					type="text"
-					value={stores}
-					onChange={(e) => setStores(e.target.value)}
+					value={reviewer}
+					onChange={(e) => setReviewer(e.target.value)}
+					placeholder="Reviewer"
+					required
+				/>
+				<input
+					className="review-textbox"
+					type="text"
+					value={review}
+					onChange={(e) => setReview(e.target.value)}
+					placeholder="Type your review!"
 					required
 				/>
 				<button type="submit" className="review-submit-button">
 					Add Review
 				</button>
 			</form>
+			{message && <p>{message}</p>}
 		</div>
 	);
 }

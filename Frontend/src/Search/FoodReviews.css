@@ -1,11 +1,13 @@
-.review-title{
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Lexend+Deca:wght@100..900&display=swap');
+
+.review-title,
+.review-add-title {
     font-family: 'Lexend Deca', sans-serif;
     font-size: 45px;
     color: #e194ff;
     padding-bottom: 5vh;
+    text-align: center; 
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Lexend+Deca:wght@100..900&display=swap');
 
 .review-container {
     padding-top: 100px;
@@ -16,54 +18,64 @@
     box-sizing: border-box;
 }
 
-.review-add-title {
-    font-family: 'Lexend Deca', sans-serif;
-    font-size: 45px;
-    color: #e194ff;
-    padding-bottom: 5vh;
-}
-
-.review-form{
+.review-form {
     display: flex;
     flex-direction: column;
-    gap:4.5vh;
+    gap: 4.5vh;
+    align-items: center;
 }
 
-.review-fields{
-    font-family: 'Lexend Deca', sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.review-input-box{
+.review-username{
     height: 25px;
     width: 45vh;
     font-family: 'Lexend Deca', sans-serif;
     font-size: 15px;
 }
 
-.review-field-container{
+.review-textbox {
+    width: 80vh;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 15px;
+    min-height: 10vh;
+    max-height: 30vh;
+}
+
+::placeholder {
+    color: #999999;
+}
+
+.review-field-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.review-submit-button{
+.review-submit-button {
     width: 40vh;
-    height:5vh;
+    height: 5vh;
     align-self: center;
     font-family: 'Lexend Deca', sans-serif;
     font-size: 20px;
     background-color: #e194ff;
     border-radius: 3px;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s; 
 }
 
-.review-submit-button:hover{
+.review-submit-button:hover {
+    background-color: #d68cdb; 
+    transform: scale(1.05);
     border-width: 3px;
 }
 
-.stars{
+.star {
     width: 40px;
     height: 40px;
-    /* filter: grayscale(100%) */
+    padding-right: 12px;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }

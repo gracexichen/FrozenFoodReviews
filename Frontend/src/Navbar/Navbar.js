@@ -15,7 +15,7 @@ export default function Navbar() {
 				</li>
 				<li className="page">
 					<a className="title" href="/add">
-						Add
+						Add Frozen Food
 					</a>
 				</li>
 				<li className="page">

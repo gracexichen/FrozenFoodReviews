@@ -3,7 +3,6 @@
 const backend_url = "http://localhost:4000";
 
 export async function fetchFrozenFood(id) {
-	console.log(id);
 	const result = await fetch(`${backend_url}/getFrozenFood`, {
 		method: "post",
 		headers: {
@@ -31,4 +30,26 @@ export async function addFrozenFood(formData) {
 		method: "POST",
 		body: formData,
 	});
+}
+
+export async function addReview(formData) {
+	console.log("addingReview");
+	await fetch(`${backend_url}/addReview`, {
+		method: "POST",
+		body: formData,
+	});
+}
+
+export async function getReviews(id) {
+	const result = await fetch(`${backend_url}/getReviews`, {
+		method: "post",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			foodID: id,
+		}),
+	});
+	const reviews = await result.json();
+	return reviews;
 }

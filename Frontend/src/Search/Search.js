@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import "./Search.css";
 import { Link } from "react-router-dom";
-import { fetchFrozenFoods } from "../API/frozenfood";
+import { fetchFrozenFoods } from "../API/backend";
 
 export default function Search() {
-	const dumplingPic = require("../assets/frozen-dumplings.jpeg");
-	const pizzaPic = require("../assets/pizza.jpg");
 	const [frozenFoods, setFrozenFoods] = useState([]);
 
 	useEffect(() => {
@@ -42,14 +40,6 @@ export default function Search() {
 								<p className="foodDescription">
 									Available at: {food.stores}
 								</p>
-								<a
-									href={food.nutritionUrl}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="foodDescription"
-								>
-									View Nutrition Info
-								</a>
 								<p className="foodDescription">
 									Rating: {food.rating}
 								</p>

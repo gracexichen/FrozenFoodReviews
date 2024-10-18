@@ -1,4 +1,4 @@
-const Leaderbaord = () => {
+const Leaderboard = () => {
 	return (
 		<div className="container">
 			<h1>To Be Developed! :)</h1>
@@ -6,4 +6,4 @@ const Leaderbaord = () => {
 	);
 };
 
-export default Leaderbaord;
+export default Leaderboard;

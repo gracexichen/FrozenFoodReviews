@@ -6,6 +6,8 @@ const {
 	addFrozenFood,
 	getFrozenFoods,
 	getFrozenFood,
+	addReview,
+	getReviews,
 } = require("./controller.js");
 
 const router = express.Router();
@@ -54,5 +56,24 @@ router.get("/getFrozenFoods", getFrozenFoods);
  * @returns the frozen food object
  */
 router.post("/getFrozenFood", getFrozenFood);
+
+/**
+ * Adds a review to a frozen food
+ * @input form data
+ * @param foodID - add review to this food
+ * @param rating - review rating
+ * @param reviewer - name of reviewer
+ * @param review - review content/text
+ * @returns success or error message
+ */
+router.post("/addReview", upload.none(), addReview);
+
+/**
+ * Get all reviews of a frozen food
+ * @input raw json
+ * @param foodID - the food to get all review for
+ * @returns array of all reviews or error message
+ */
+router.post("/getReviews", getReviews);
 
 module.exports = router;

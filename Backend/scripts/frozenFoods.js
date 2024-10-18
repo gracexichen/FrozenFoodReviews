@@ -37,7 +37,7 @@ async function addNewFood(name, stores, image, nutritionLabel) {
 		rating: -1,
 	};
 	await frozenfoods.insertOne(newFrozenFood);
-	response.success = "Successfully added avatar!";
+	response.success = "Successfully added food!";
 	return response;
 }
 
@@ -50,14 +50,12 @@ async function getAllFoods() {
 }
 
 async function getOneFood(id) {
-	console.log(id);
 	const client = await getClient();
 	const database = client.db("frozenfoodreviews");
 	const frozenFoods = database.collection("frozenfoods");
 	const frozenFoodObj = await frozenFoods.findOne({
 		_id: new mongoose.Types.ObjectId(id),
 	});
-	console.log(frozenFoodObj);
 	return frozenFoodObj;
 }
 
