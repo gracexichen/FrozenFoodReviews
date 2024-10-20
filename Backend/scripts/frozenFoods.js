@@ -41,11 +41,18 @@ async function addNewFood(name, stores, image, nutritionLabel) {
 	return response;
 }
 
-async function getAllFoods() {
+async function getAllFoods(word) {
 	const client = await getClient();
 	const database = client.db("frozenfoodreviews");
 	const frozenFoods = database.collection("frozenfoods");
-	const frozenFoodObjs = await frozenFoods.find({}).toArray();
+	const frozenFoodObjs = await frozenFoods
+		.find({
+			$or: [
+				{ name: { $regex: new RegExp(word, "i") } },
+				{ stores: { $regex: new RegExp(word, "i") } },
+			],
+		})
+		.toArray();
 	return frozenFoodObjs;
 }
 

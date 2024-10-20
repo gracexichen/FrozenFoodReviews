@@ -22,7 +22,7 @@ async function addFrozenFood(req, res) {
 }
 
 async function getFrozenFoods(req, res) {
-	result = await getAllFoods();
+	result = await getAllFoods(req.query.search);
 	res.send(result);
 }
 

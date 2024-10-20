@@ -45,7 +45,8 @@ router.post("/addFrozenFood", upload.any(), addFrozenFood);
 /**
  * Gets all of the frozen food objects
  * #TODO: Fix so that it searches for most relevant matches
- * @input none
+ * @input query params
+ * @param search - characters/words to filter foods to get
  * @returns all frozen food objects or error message
  */
 router.get("/getFrozenFoods", getFrozenFoods);

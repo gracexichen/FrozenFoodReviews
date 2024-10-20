@@ -30,6 +30,7 @@ export default function FoodDetail() {
 			<div className="detail-container">
 				<div className="food-information">
 					<h1 className="food-name">{frozenFood.name}</h1>
+					<h3>Rating: {frozenFood.rating}</h3>
 					<h2 className="stores">{frozenFood.stores}</h2>
 					<div>
 						<img className="food-pic" src={frozenFood.image}></img>

@@ -28,68 +28,72 @@ const AddFrozenFood = () => {
 	};
 
 	return (
-		<div className="container">
-			<h1 className="add-title">Add Frozen Food</h1>
-			<form onSubmit={handleSubmit} className="form">
-				<div className="field-container">
-					<label className="fields">Name:</label>
-					<input
-						className="input-box"
-						type="text"
-						value={name}
-						onChange={(e) => setName(e.target.value)}
-						required
-					/>
-				</div>
-				<div className="field-container">
-					<label className="fields">Stores (comma separated):</label>
-					<input
-						className="input-box"
-						type="text"
-						value={stores}
-						onChange={(e) => setStores(e.target.value)}
-						required
-					/>
-				</div>
-				<div className="field-container">
-					<label className="fields">Image:</label>
-					<input
-						className="input-box"
-						type="file"
-						onChange={(e) => setImage(e.target.files[0])}
-						accept="image/*"
-						required
-					/>
-				</div>
-				{image && (
-					<img
-						src={URL.createObjectURL(image)}
-						alt="Selected"
-						className="image-preview"
-					/>
-				)}
-				<div className="field-container">
-					<label className="fields">Nutrition Label:</label>
-					<input
-						className="input-box"
-						type="file"
-						onChange={(e) => setLabel(e.target.files[0])}
-						accept="image/*,application/pdf"
-						required
-					/>
-				</div>
-				{label && (
-					<img
-						src={URL.createObjectURL(label)}
-						alt="Label Preview"
-						className="image-preview"
-					/>
-				)}
-				<button type="submit" className="submit-button">
-					Add Frozen Food
-				</button>
-			</form>
-			{message && <p>{message}</p>}
+		<div className="add-container">
+			<div className="add-box">
+				<h1 className="add-title">Add Frozen Food</h1>
+				<form onSubmit={handleSubmit} className="form">
+					<div className="field-container">
+						<label className="fields">Name:</label>
+						<input
+							className="input-box"
+							type="text"
+							value={name}
+							onChange={(e) => setName(e.target.value)}
+							required
+						/>
+					</div>
+					<div className="field-container">
+						<label className="fields">
+							Stores (comma separated):
+						</label>
+						<input
+							className="input-box"
+							type="text"
+							value={stores}
+							onChange={(e) => setStores(e.target.value)}
+							required
+						/>
+					</div>
+					<div className="field-container">
+						<label className="fields">Image:</label>
+						<input
+							className="input-box"
+							type="file"
+							onChange={(e) => setImage(e.target.files[0])}
+							accept="image/*"
+							required
+						/>
+					</div>
+					{image && (
+						<img
+							src={URL.createObjectURL(image)}
+							alt="Selected"
+							className="image-preview"
+						/>
+					)}
+					<div className="field-container">
+						<label className="fields">Nutrition Label:</label>
+						<input
+							className="input-box"
+							type="file"
+							onChange={(e) => setLabel(e.target.files[0])}
+							accept="image/*,application/pdf"
+							required
+						/>
+					</div>
+					{label && (
+						<img
+							src={URL.createObjectURL(label)}
+							alt="Label Preview"
+							className="image-preview"
+						/>
+					)}
+					<button type="submit" className="submit-button">
+						Add Frozen Food
+					</button>
+				</form>
+				{message && <p>{message}</p>}
+			</div>
 		</div>
 	);
 };

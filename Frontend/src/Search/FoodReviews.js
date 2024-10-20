@@ -46,67 +46,71 @@ export default function FoodReviews() {
 
 	return (
 		<div className="review-container">
-			<h1 className="review-title">Add Review For "{foodName}"</h1>
-			<form onSubmit={handleSubmit} className="review-form">
-				<div className="stars">
-					{starsArray.map((_, index) => {
-						let filterStyle;
-						if (rating !== 0) {
-							if (index < rating) {
-								filterStyle = "none";
+			<div className="review-components">
+				<h1 className="review-title">Add Review For "{foodName}"</h1>
+				<form onSubmit={handleSubmit} className="review-form">
+					<div className="stars">
+						{starsArray.map((_, index) => {
+							let filterStyle;
+							if (rating !== 0) {
+								if (index < rating) {
+									filterStyle = "none";
+								} else {
+									filterStyle =
+										index < tempRating
+											? "none"
+											: "grayscale(100%)";
+								}
 							} else {
 								filterStyle =
 									index < tempRating
 										? "none"
 										: "grayscale(100%)";
 							}
-						} else {
-							filterStyle =
-								index < tempRating ? "none" : "grayscale(100%)";
-						}
-						return (
-							<img
-								key={index}
-								src={yellowStar}
-								className="star"
-								style={{
-									filter: filterStyle,
-								}}
-								onMouseEnter={() => {
-									setTempRating(index + 1);
-								}}
-								onMouseLeave={() => {
-									setTempRating(0);
-								}}
-								onClick={() => {
-									setRating(index + 1);
-								}}
-							/>
-						);
-					})}
-					<p>Rating: {rating}</p>
-				</div>
-				<input
-					className="review-username"
-					type="text"
-					value={reviewer}
-					onChange={(e) => setReviewer(e.target.value)}
-					placeholder="Reviewer"
-					required
-				/>
-				<input
-					className="review-textbox"
-					type="text"
-					value={review}
-					onChange={(e) => setReview(e.target.value)}
-					placeholder="Type your review!"
-					required
-				/>
-				<button type="submit" className="review-submit-button">
-					Add Review
-				</button>
-			</form>
-			{message && <p>{message}</p>}
+							return (
+								<img
+									key={index}
+									src={yellowStar}
+									className="star"
+									style={{
+										filter: filterStyle,
+									}}
+									onMouseEnter={() => {
+										setTempRating(index + 1);
+									}}
+									onMouseLeave={() => {
+										setTempRating(0);
+									}}
+									onClick={() => {
+										setRating(index + 1);
+									}}
+								/>
+							);
+						})}
+						<p>Rating: {rating}</p>
+					</div>
+					<input
+						className="review-username"
+						type="text"
+						value={reviewer}
+						onChange={(e) => setReviewer(e.target.value)}
+						placeholder="Reviewer"
+						required
+					/>
+					<input
+						className="review-textbox"
+						type="text"
+						value={review}
+						onChange={(e) => setReview(e.target.value)}
+						placeholder="Type your review!"
+						required
+					/>
+					<button type="submit" className="review-submit-button">
+						Add Review
+					</button>
+				</form>
+				{message && <p>{message}</p>}
+			</div>
 		</div>
 	);
 }

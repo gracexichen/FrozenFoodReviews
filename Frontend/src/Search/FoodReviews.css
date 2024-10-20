@@ -3,41 +3,56 @@
 .review-title,
 .review-add-title {
     font-family: 'Lexend Deca', sans-serif;
-    font-size: 45px;
+    font-size: 2.2rem;
     color: #e194ff;
     padding-bottom: 5vh;
     text-align: center; 
 }
 
 .review-container {
-    padding-top: 100px;
-    height: calc(100vh - 100px);
+    padding-top: 50px;
+    height: calc(100vh - 50px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-sizing: border-box;
+    justify-content: center;
+    background-color: #e194ff;
+}
+
+.review-components {
+    padding: 30px; 
+    border-radius: 15px;
+    height: 70vh;
+    width: 40%;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .review-form {
     display: flex;
     flex-direction: column;
-    gap: 4.5vh;
-    align-items: center;
+    gap: 4vh;
 }
 
-.review-username{
-    height: 25px;
+.review-username {
+    height: 35px; 
     width: 45vh;
     font-family: 'Lexend Deca', sans-serif;
-    font-size: 15px;
+    font-size: 1.2rem;
+    padding: 5px;
+    border: 1px solid #e194ff;
+    border-radius: 5px;
 }
 
 .review-textbox {
     width: 80vh;
     font-family: 'Lexend Deca', sans-serif;
-    font-size: 15px;
-    min-height: 10vh;
+    font-size: 1.2rem; 
+    min-height: 15vh; 
     max-height: 30vh;
+    padding: 5px;
+    border: 1px solid #e194ff;
+    border-radius: 5px;
 }
 
 ::placeholder {
@@ -53,11 +68,10 @@
 .review-submit-button {
     width: 40vh;
     height: 5vh;
-    align-self: center;
     font-family: 'Lexend Deca', sans-serif;
-    font-size: 20px;
+    font-size: 1.5rem;
     background-color: #e194ff;
-    border-radius: 3px;
+    border-radius: 5px; 
     border: none;
     transition: background-color 0.3s, transform 0.2s; 
 }
@@ -65,17 +79,18 @@
 .review-submit-button:hover {
     background-color: #d68cdb; 
     transform: scale(1.05);
-    border-width: 3px;
+    border-width: 2px; 
 }
 
 .star {
-    width: 40px;
-    height: 40px;
-    padding-right: 12px;
+    width: 35px;
+    height: 35px;
+    padding-right: 8px; 
 }
 
 .stars {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-bottom: 10px;
 }

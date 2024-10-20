@@ -5,18 +5,28 @@ import { fetchFrozenFoods } from "../API/backend";
 
 export default function Search() {
 	const [frozenFoods, setFrozenFoods] = useState([]);
+	const [search, setSearch] = useState("");
 
 	useEffect(() => {
 		const getFrozenFoods = async () => {
-			setFrozenFoods(await fetchFrozenFoods());
+			setFrozenFoods(await fetchFrozenFoods(""));
 		};
 		getFrozenFoods();
 	}, []);
+
+	const handleChange = async (e) => {
+		const newSearch = e.target.value;
+		setSearch(newSearch);
+		const foods = await fetchFrozenFoods(newSearch);
+		setFrozenFoods(foods);
+	};
 
 	return (
 		<div className="container">
 			<input
 				className="searchBar"
+				value={search}
+				onChange={handleChange}
 				placeholder="Frozen Food Name or Grocery Store"
 			/>
 			<h1 className="caption">
