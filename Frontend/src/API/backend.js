@@ -1,6 +1,6 @@
 // Local: http://localhost:4000
 // Deployed: https://frozen-food-reviews.vercel.app
-const backend_url = "https://frozen-food-reviews.vercel.app";
+const backend_url = "http://localhost:4000";
 
 export async function fetchFrozenFood(id) {
 	const result = await fetch(`${backend_url}/getFrozenFood`, {

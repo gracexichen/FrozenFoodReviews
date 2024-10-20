@@ -32,7 +32,10 @@ const Leaderboard = () => {
 						></img>
 					</div>
 					<div className="ldr-2-info">
-						<p>{topFoods[1] && topFoods[1].rating}</p>
+						<h3 className="ldr-food-name">
+							[2] {topFoods[1] && topFoods[1].name}
+						</h3>
+						<p>Rating: {topFoods[1] && topFoods[1].rating}</p>
 					</div>
 				</div>
 				<div className="ldr-1">
@@ -43,7 +46,10 @@ const Leaderboard = () => {
 						></img>
 					</div>
 					<div className="ldr-1-info">
-						<p>{topFoods[0] && topFoods[0].rating}</p>
+						<h3 className="ldr-food-name">
+							[1] {topFoods[0] && topFoods[0].name}
+						</h3>
+						<p>Rating: {topFoods[0] && topFoods[0].rating}</p>
 					</div>
 				</div>
 				<div className="ldr-3">
@@ -54,13 +60,21 @@ const Leaderboard = () => {
 						></img>
 					</div>
 					<div className="ldr-3-info">
-						<p>{topFoods[2] && topFoods[2].rating}</p>
+						<h3 className="ldr-food-name">
+							[3] {topFoods[2] && topFoods[2].name}
+						</h3>
+						<p>Rating: {topFoods[2] && topFoods[2].rating}</p>
 					</div>
 				</div>
 			</div>
 			<div className="ldr-rest">
-				{topFoods.slice(3).map((topFood) => (
-					<h3 key={topFood.id}>{topFood.name}</h3>
+				{topFoods.slice(3).map((topFood, index) => (
+					<div className="ldr-remaining">
+						<h3 key={topFood.id}>
+							[{index + 4}] {topFood.name}
+						</h3>
+						<h3>Rating: {topFood.rating}</h3>
+					</div>
 				))}
 			</div>
 		</div>
