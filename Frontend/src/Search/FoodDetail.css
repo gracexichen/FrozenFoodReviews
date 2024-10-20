@@ -99,6 +99,6 @@
 }
 
 .all-reviews{
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: 68vh;
 }

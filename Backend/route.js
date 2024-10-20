@@ -8,6 +8,7 @@ const {
 	getFrozenFood,
 	addReview,
 	getReviews,
+	getTopFoods,
 } = require("./controller.js");
 
 const router = express.Router();
@@ -75,5 +76,11 @@ router.post("/addReview", upload.none(), addReview);
  * @returns array of all reviews or error message
  */
 router.post("/getReviews", getReviews);
+
+/**
+ * Get top ten foods sorted by rating
+ * @returns array of top ten frozen foods (sorted by rating)
+ */
+router.get("/getTopFoods", getTopFoods);
 
 module.exports = router;

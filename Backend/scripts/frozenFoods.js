@@ -59,8 +59,22 @@ async function getOneFood(id) {
 	return frozenFoodObj;
 }
 
+async function getLeaderboardFoods() {
+	// Gets top ten frozen foods
+	const client = await getClient();
+	const database = client.db("frozenfoodreviews");
+	const frozenFoods = database.collection("frozenfoods");
+	const frozenFoodObjs = await frozenFoods
+		.find({})
+		.sort({ rating: -1 })
+		.limit(10)
+		.toArray();
+	return frozenFoodObjs;
+}
+
 module.exports = {
 	addNewFood,
 	getAllFoods,
 	getOneFood,
+	getLeaderboardFoods,
 };

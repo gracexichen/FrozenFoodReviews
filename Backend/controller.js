@@ -2,6 +2,7 @@ const {
 	addNewFood,
 	getAllFoods,
 	getOneFood,
+	getLeaderboardFoods,
 } = require("./scripts/frozenFoods");
 
 const { addNewReview, getReviewsForFood } = require("./scripts/foodReviews");
@@ -45,6 +46,11 @@ async function getReviews(req, res) {
 	res.send(result);
 }
 
+async function getTopFoods(req, res) {
+	result = await getLeaderboardFoods(req.body);
+	res.send(result);
+}
+
 module.exports = {
 	tester,
 	addFrozenFood,
@@ -52,4 +58,5 @@ module.exports = {
 	getFrozenFood,
 	addReview,
 	getReviews,
+	getTopFoods,
 };
