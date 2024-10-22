@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Lexend+Deca:wght@100..900&display=swap');
 
-.review-title,
-.review-add-title {
+.review-title {
     font-family: 'Lexend Deca', sans-serif;
-    font-size: 2.2rem;
     color: #e194ff;
     padding-bottom: 5vh;
     text-align: center; 
@@ -17,15 +15,6 @@
     align-items: center;
     justify-content: center;
     background-color: #e194ff;
-}
-
-.review-components {
-    padding: 30px; 
-    border-radius: 15px;
-    height: 70vh;
-    width: 40%;
-    background-color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .review-form {
@@ -93,4 +82,35 @@
     flex-direction: row;
     align-items: center;
     margin-bottom: 10px;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+    .review-title{
+        font-size: 15px;
+    }
+    .review-components {
+        margin: 10px;
+        height: 100%;
+        width: 100%;
+        border-radius: 15px;
+        height: 70vh;
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Web */
+@media (min-width: 769px){
+    .review-title{
+        font-size: 2.2rem;
+    }
+    .review-components {
+        padding: 30px; 
+        border-radius: 15px;
+        height: 70vh;
+        width: 40%;
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
 }

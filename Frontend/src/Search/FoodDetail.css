@@ -1,6 +1,5 @@
 .detail-container {
     display: flex;
-    flex-direction: row;
     width: 100%;
 }
 
@@ -50,16 +49,6 @@
     font-size: 35px;
 }
 
-.food-pic {
-    max-height: 40vh;
-    max-width: 40vh;
-}
-
-.food-label {
-    max-height: 40vh;
-    max-width: 30vh;
-}
-
 .stores{
     font-family: 'Lexend Deca', sans-serif;
     color: rgb(199, 0, 186);
@@ -101,4 +90,34 @@
 .all-reviews{
     overflow-y: auto;
     max-height: 68vh;
+}
+
+.food-images{
+    display: flex;
+    flex-direction: row;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .detail-container{
+        flex-direction: column;
+    }
+    .reviews{
+        margin-top: 30px;
+    }
+}
+
+/* Web */
+@media (min-width: 769px) {
+    .detail-container{
+        flex-direction: row;
+    }
+    .food-pic {
+    max-height: 40vh;
+    max-width: 40vh;
+    }
+    .food-label {
+        max-height: 40vh;
+        max-width: 30vh;
+    }
 }

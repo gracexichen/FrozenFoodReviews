@@ -49,3 +49,28 @@
 a:visited {
     color: inherit;
 }
+
+.navbar-icon{
+    height: 35px;
+    width: 35px;
+}
+
+@media (max-width: 768px) {
+	.navbar-name {
+		display: none;
+	}
+
+	.navbar-icon {
+		display: inline;
+	}
+}
+
+@media (min-width: 769px) {
+	.navbar-name {
+		display: inline;
+	}
+
+	.navbar-icon {
+		display: none;
+	}
+}
