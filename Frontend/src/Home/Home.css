@@ -84,3 +84,18 @@ a {
     color: inherit;
     font-family: 'Lexend Deca', sans-serif;
 }
+
+/* Web */
+@media (min-width: 769px){
+    .home-container{
+        height: calc(100vh - 100px);
+    }
+}
+
+/* Mobile */
+@media (max-width:768px){
+    .home-container{
+        height: calc(100vh - 90px);
+    }
+
+}

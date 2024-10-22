@@ -2,7 +2,6 @@
 
 .container {
     padding-top: 100px;
-    height: calc(100vh - 50px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -87,6 +86,9 @@ a {
     .frozenFood{
         margin: 5px 20px 5px 20px;
     }
+    .container{
+        height: calc(100vh - 100px);
+    }
 }
 
 /* Web */
@@ -103,5 +105,8 @@ a {
         min-height: 42vh;
         max-width: calc(20%);
         max-height: 40vh;
+    }
+    .container{
+        height: calc(100vh - 100px);
     }
 }

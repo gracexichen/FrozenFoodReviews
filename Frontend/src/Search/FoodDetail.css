@@ -58,7 +58,6 @@
 .review{
     margin: 0px;
     border:2px solid black;
-    width:80vh;
     margin:10px;
     min-height: 4vh;
     border-radius: 7px;
@@ -105,6 +104,12 @@
     .reviews{
         margin-top: 30px;
     }
+    .food-pic {
+        height: 200px;
+    }
+    .food-label {
+        height: 200px;
+    }
 }
 
 /* Web */
@@ -113,11 +118,14 @@
         flex-direction: row;
     }
     .food-pic {
-    max-height: 40vh;
-    max-width: 40vh;
+        max-height: 40vh;
+        max-width: 40vh;
     }
     .food-label {
         max-height: 40vh;
         max-width: 30vh;
+    }
+    .review{
+        width:80vh;
     }
 }

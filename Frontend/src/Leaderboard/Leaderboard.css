@@ -1,6 +1,5 @@
 .ldr-background{
     font-family: 'Lexend Deca', sans-serif;
-    height: calc(100vh - 50px);
     padding-top: 50px;
     display: flex;
     flex-direction: column;
@@ -119,4 +118,19 @@
     flex-direction: row;
     justify-content: space-between;
     border-radius: 20px;
+}
+
+/* Web */
+@media (min-width: 769px){
+    .ldr-background{
+        height: calc(100vh - 100px);
+    }
+}
+
+/* Mobile */
+@media (max-width:768px){
+    .ldr-background{
+        height: calc(100vh - 90px);
+    }
+
 }

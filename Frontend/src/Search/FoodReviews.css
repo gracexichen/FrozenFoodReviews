@@ -14,7 +14,6 @@
     align-items: center;
     justify-content: center;
     background-color: #e194ff;
-    height: calc(100vh - 50px);
 }
 
 .review-form {
@@ -94,6 +93,7 @@
     }
     .review-container{
         padding:15px;
+        height: calc(100vh - 30px);
     }
     .review-username{
         height: 35px; 
@@ -127,5 +127,9 @@
         width: 80vh;
         min-height: 15vh; 
         max-height: 30vh;
+    }
+    .review-container{
+        height: calc(100vh - 90px);
+;
     }
 }
