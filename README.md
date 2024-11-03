@@ -4,7 +4,7 @@ Frozen Food Reviews is a platform where users can discover new frozen foods, sha
 
 ## Description
 
-Explore the site here: [Frozen Food Reviews](https://frozenflavors.vercel.app/)
+Explore the site here: [https://frozenflavors.vercel.app/](https://frozenflavors.vercel.app/)
 
 Frozen Food Reviews provides an easy way for users to review and rate various frozen food items available in stores. Users can browse through reviews to discover the best options or avoid the worst!
 
